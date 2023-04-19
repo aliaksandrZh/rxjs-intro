@@ -3,7 +3,7 @@
 * https://www.learnrxjs.io/learn-rxjs/subjects/behaviorsubject
 *
 * Subject with a default (initial) value
-* It keeps the last value and emittes it to a new subscriber
+* It keeps the last value and emits it to a new subscriber
 *
 * It has getValue() method
 *
