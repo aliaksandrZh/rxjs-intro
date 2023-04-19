@@ -1,4 +1,7 @@
 /*
+*
+* https://drek4537l1klr.cloudfront.net/daniels/Figures/08fig09_alt.jpg
+*
 * map - https://www.learnrxjs.io/learn-rxjs/operators/transformation/map
 * debounce - https://www.learnrxjs.io/learn-rxjs/operators/filtering/debounce
 * pairwise - https://www.learnrxjs.io/learn-rxjs/operators/combination/pairwise

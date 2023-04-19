@@ -3,13 +3,14 @@
 * https://angular.io/guide/observables
 * https://www.learnrxjs.io/learn-rxjs/operators/creation
 * Observable is a core class that represents a stream of data that can be observed over time.
-* An Observable can emit multiple values, either synchronously or asynchronously, and can also emit an error.
+*
+* https://yakovfain.files.wordpress.com/2017/08/ch5_producer_observable_subscribers.png
 *
 * To invoke the Observable and see its values, we need to subscribe to it.
 *
+* https://www.learnrxjs.io/
 * */
-import {first, Observable, of} from 'rxjs';
-import { from } from 'rxjs';
+import { Observable, of, from} from 'rxjs';
 
 /*
 * emit 1,2,3
@@ -24,12 +25,12 @@ const observable = new Observable((subscriber) => {
 
     setTimeout(() => {
         subscriber.next(4);
-        subscriber.complete();
+        // subscriber.complete();
     }, 1000);
 });
 
 console.log('just before subscribe');
-observable.subscribe({
+const t = observable.subscribe({
     next: (x) => console.log('got value ' + x),
     error: (err) => console.error('something wrong occurred: ' + err),
     complete: () => console.log('done'),
@@ -96,8 +97,3 @@ console.log('just after subscribe');
 // const myObservable$ = from(myPromise);
 // setTimeout(() => myObservable$.subscribe(x => console.log(x)), 2000);
 
-
-/*
-* fromEvent
-* timer
-* */
