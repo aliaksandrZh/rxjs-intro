@@ -1,7 +1,6 @@
 /*
 * https://rxjs.dev/guide/subject#replaysubject
 * A ReplaySubject is similar to a BehaviorSubject in that it can send old values to new subscribers,
-* but it can also record a part of the Observable execution.
 *
 * https://github.com/ReactiveX/rxjs/blob/master/src/internal/ReplaySubject.ts
 * */
