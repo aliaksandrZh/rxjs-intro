@@ -32,7 +32,7 @@ const outer$ = interval(1000).pipe(take(5));
 
 /*
 * When you use exhaustMap, it will ignore any new inner Observables until the current inner Observable has completed.
-* Only when the current inner Observable completes will exhaustMap allow the next inner Observable to be subscribed to.
+* Only when the current inner Observable completes exhaustMap allow the next inner Observable to be subscribed to.
 * */
 // outer$.pipe(
 //     exhaustMap((x) =>
@@ -48,12 +48,12 @@ const outer$ = interval(1000).pipe(take(5));
 * When you use switchMap, it will cancel any previous inner Observables and only emit
 * the values from the latest inner Observable.
 * */
-// outer$.pipe(
-//     switchMap((x) =>
-//         interval(300).pipe(
-//             take(15),
-//             map(y => `outer ${x} inner ${y}`)
-//         )
-//     )
-// ).subscribe(console.log);
+outer$.pipe(
+    switchMap((x) =>
+        interval(300).pipe(
+            take(15),
+            map(y => `outer ${x} inner ${y}`)
+        )
+    )
+).subscribe(console.log);
 
