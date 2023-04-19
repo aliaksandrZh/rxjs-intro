@@ -2,9 +2,7 @@
 * The AsyncSubject is a variant where only the last value of the Observable execution is sent to its observers,
 * and only when the execution completes.
 *
-* the next method is override
 * https://github.com/ReactiveX/rxjs/blob/f04fe72eba2f117041e1a9c1794f16473ecae697/src/internal/AsyncSubject.ts#L26
-* if it's still running just save the value to the property
 *
 * https://github.com/ReactiveX/rxjs/blob/f04fe72eba2f117041e1a9c1794f16473ecae697/src/internal/AsyncSubject.ts#L16
 * _checkFinalizedStatuses is override
@@ -65,12 +63,12 @@ lastValueOfTheDataOverTime.subscribe({
 * In the different part of the app we want to know if the user completed tasks.
 * */
 
-// setTimeout(() => {
-//     lastValueOfTheDataOverTime.subscribe({
-//         next: (v) => console.log('a2', v),
-//         complete: () => console.log('a2 is completed')
-//     })
-// }, 10000);
+setTimeout(() => {
+    lastValueOfTheDataOverTime.subscribe({
+        next: (v) => console.log('a2', v),
+        complete: () => console.log('a2 is completed')
+    })
+}, 10000);
 //
 
 /*
